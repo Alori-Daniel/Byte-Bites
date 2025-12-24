@@ -32,7 +32,7 @@ export const Colors = {
     buttonBackground: "#ff6347",
     buttonText: "#ffffff",
     placeholderText: "#888888",
-    inputBackground: "#babdc1",
+    inputBackground: "#4c555f",
     focusedBorder: "#ffffff",
   },
 };

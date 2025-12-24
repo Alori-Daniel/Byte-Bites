@@ -52,7 +52,7 @@ const createStyles = (theme: Theme) =>
       gap: spacingY._10,
     },
     primaryBorder: {
-      borderColor: theme.background,
+      borderColor: theme.focusedBorder,
     },
     input: {
       flex: 1,

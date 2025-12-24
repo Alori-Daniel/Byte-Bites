@@ -86,6 +86,7 @@ const login = () => {
             icon={<FlagSelect />}
             placeholder="Phone number"
             value={phoneNumber}
+            containerStyle={{ height: 56 }}
             onChangeText={setPhoneNumber}
             keyboardType="number-pad"
             returnKeyType="done"
@@ -171,12 +172,8 @@ const login = () => {
           }}
         >
           <Typo color={theme.darkText}>Don't have an account?</Typo>
-          <TouchableOpacity
-            onPress={() =>
-              console.log("Sign up pressed", country?.callingCode + phoneNumber)
-            }
-          >
-            <Typo color={theme.text}>Register</Typo>
+          <TouchableOpacity onPress={() => router.push("/(auth)/register")}>
+            <Typo color={Colors.primary}>Register</Typo>
           </TouchableOpacity>
         </View>
       </View>
