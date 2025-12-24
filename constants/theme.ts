@@ -5,14 +5,18 @@ export const Colors = {
   primaryWhite: "#ffffff",
   text: "#0d1217",
   light: {
-    text: "#0d1217",
+    text: "#ff6347",
     background: "#ffffff",
+    buttonBackground: "#ff6347",
+    buttonText: "#ffffff",
     border: "#e9eaeb",
   },
   dark: {
     text: "#697079",
     background: "#0d1217",
     border: "#4c555f",
+    buttonBackground: "#ff6347",
+    buttonText: "#ffffff",
   },
 };
 

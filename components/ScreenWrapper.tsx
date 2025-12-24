@@ -30,7 +30,7 @@ const ScreenWrapper = ({
       }}
     >
       {children}
-      <StatusBar barStyle={"light-content"} backgroundColor={"transparent"} />
+      <StatusBar barStyle={"default"} backgroundColor={"transparent"} />
     </View>
   );
 };
