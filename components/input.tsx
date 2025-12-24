@@ -40,12 +40,12 @@ const createStyles = (theme: Theme) =>
   StyleSheet.create({
     container: {
       flexDirection: "row",
-      height: verticalScale(38),
+      height: verticalScale(48),
       alignItems: "center",
       justifyContent: "center",
       borderWidth: 1,
       borderColor: theme.border,
-      borderRadius: radius.full,
+      borderRadius: radius._6,
       borderCurve: "continuous",
       paddingHorizontal: spacingY._15,
       backgroundColor: theme.background,

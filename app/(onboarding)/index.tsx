@@ -3,6 +3,7 @@ import ScreenWrapper from "@/components/ScreenWrapper";
 import Typo from "@/components/Typo";
 import { Colors } from "@/constants/theme";
 import { scale } from "@/utils/styling";
+import { useRouter } from "expo-router";
 import React, { useRef, useState } from "react";
 import {
   Dimensions,
@@ -46,7 +47,7 @@ const Onboarding = () => {
   const theme = Colors[colorScheme as "light" | "dark"];
   const scrollRef = useRef<ScrollView>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  const router = useRouter();
   const handleScroll = (event: any) => {
     const contentOffsetX = event.nativeEvent.contentOffset.x;
     const screenWidth = Dimensions.get("window").width;
@@ -61,6 +62,8 @@ const Onboarding = () => {
         x: nextIndex * Dimensions.get("window").width,
         animated: true,
       });
+    } else {
+      router.push("/(auth)/login");
     }
   };
 
@@ -152,7 +155,7 @@ const Onboarding = () => {
           style={{ backgroundColor: "transparent", width: scale(345) }}
           onPress={() => {
             if (currentIndex === onboardingData.length - 1) {
-              console.log("Navigate to login/register");
+              router.push("/(auth)/register");
             } else {
               if (scrollRef.current) {
                 scrollRef.current.scrollTo({
