@@ -3,6 +3,7 @@ import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen"; // Uncommented
 import React, { useEffect } from "react";
 import { StyleSheet, useColorScheme } from "react-native";
+import { KeyboardProvider } from "react-native-keyboard-controller";
 import { Colors } from "../constants/theme";
 
 export function RootLayout() {
@@ -52,7 +53,11 @@ export function RootLayout() {
 }
 
 const _layout = () => {
-  return <RootLayout />;
+  return (
+    <KeyboardProvider preload={false}>
+      <RootLayout />
+    </KeyboardProvider>
+  );
 };
 
 export default _layout;

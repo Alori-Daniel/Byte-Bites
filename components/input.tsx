@@ -24,7 +24,7 @@ const Input = (props: InputProps) => {
       {props.icon && props.icon}
       <TextInput
         style={[styles.input, props.inputStyle]}
-        placeholderTextColor={theme.text}
+        placeholderTextColor={theme.placeholderText}
         ref={props.inputRef && props.inputRef}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
@@ -42,17 +42,17 @@ const createStyles = (theme: Theme) =>
       flexDirection: "row",
       height: verticalScale(48),
       alignItems: "center",
-      justifyContent: "center",
+      justifyContent: "flex-start",
       borderWidth: 1,
       borderColor: theme.border,
       borderRadius: radius._6,
       borderCurve: "continuous",
-      paddingHorizontal: spacingY._15,
-      backgroundColor: theme.background,
+      paddingHorizontal: spacingY._5,
+      backgroundColor: theme.inputBackground,
       gap: spacingY._10,
     },
     primaryBorder: {
-      borderColor: Colors.primary,
+      borderColor: theme.background,
     },
     input: {
       flex: 1,

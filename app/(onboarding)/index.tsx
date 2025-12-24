@@ -13,6 +13,7 @@ import {
   useColorScheme,
   View,
 } from "react-native";
+import { KeyboardController } from "react-native-keyboard-controller";
 import Animated from "react-native-reanimated";
 
 const onboardingData = [
@@ -54,6 +55,7 @@ const Onboarding = () => {
     const index = Math.floor(contentOffsetX / screenWidth);
     setCurrentIndex(index);
   };
+  KeyboardController.preload();
 
   const handleNext = () => {
     const nextIndex = currentIndex + 1;

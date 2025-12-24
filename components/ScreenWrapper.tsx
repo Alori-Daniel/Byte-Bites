@@ -18,7 +18,7 @@ const ScreenWrapper = ({
   children?: React.ReactNode;
 }) => {
   let paddingTop = Platform.OS === "ios" ? height * 0.06 : 40;
-  let paddingBottom = 0;
+  let paddingBottom = Platform.OS === "ios" ? height * 0.03 : 20;
 
   return (
     <View
