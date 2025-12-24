@@ -3,20 +3,37 @@ import { verticalScale } from "@/utils/styling";
 export const Colors = {
   primary: "#ff6347",
   primaryWhite: "#ffffff",
+  primaryText: "#6D6C69",
   text: "#0d1217",
   light: {
     text: "#ff6347",
+    secondaryText: "#697079",
+    darkText: "#0d1217",
+
     background: "#ffffff",
+    secondaryBackground: "#f5f5f5",
+
     buttonBackground: "#ff6347",
     buttonText: "#ffffff",
     border: "#e9eaeb",
+    focusedBorder: "#babdc1",
+    placeholderText: "#a0a0a0",
+    inputBackground: "#e9eaeb",
   },
   dark: {
     text: "#697079",
+    secondaryText: "#ffffff",
+    darkText: "#babdc1",
+
     background: "#0d1217",
+    secondaryBackground: "#ff6347",
+
     border: "#4c555f",
     buttonBackground: "#ff6347",
     buttonText: "#ffffff",
+    placeholderText: "#888888",
+    inputBackground: "#babdc1",
+    focusedBorder: "#ffffff",
   },
 };
 
