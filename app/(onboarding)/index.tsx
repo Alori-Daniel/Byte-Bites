@@ -1,11 +1,15 @@
+import ScreenWrapper from "@/components/ScreenWrapper";
+import Typo from "@/components/Typo";
+import { Colors } from "@/constants/theme";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-
+import { StyleSheet, useColorScheme } from "react-native";
 const index = () => {
+  const colorScheme = useColorScheme() ?? "light";
+  const theme = Colors[colorScheme as "light" | "dark"];
   return (
-    <View>
-      <Text>index</Text>
-    </View>
+    <ScreenWrapper style={{ backgroundColor: theme.background }}>
+      <Typo>Hello</Typo>
+    </ScreenWrapper>
   );
 };
 
