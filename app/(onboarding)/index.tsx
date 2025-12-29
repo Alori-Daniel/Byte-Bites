@@ -101,6 +101,7 @@ const Onboarding = () => {
               style={{
                 marginTop: scale(8),
                 color: Colors.primary,
+                textAlign: "center",
               }}
               fontWeight={"400"}
               size={18}

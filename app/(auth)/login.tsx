@@ -159,7 +159,9 @@ const login = () => {
                 borderColor: theme.focusedBorder,
                 marginHorizontal: 5,
               }}
-            ></TouchableOpacity>
+            >
+              <Ionicons name="logo-google" size={24} color="black" />
+            </TouchableOpacity>
           ))}
         </View>
 
