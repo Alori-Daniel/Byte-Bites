@@ -1,3 +1,4 @@
+import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen"; // Uncommented
@@ -14,6 +15,13 @@ export function RootLayout() {
   });
 
   useEffect(() => {
+    GoogleSignin.configure({
+      iosClientId:
+        "754212586406-q32mst6v1a3mi2lld8c45bek27pmvc24.apps.googleusercontent.com",
+      webClientId:
+        "754212586406-1vm9no1640k49fk69qb5i6lcfuosm864.apps.googleusercontent.com",
+      profileImageSize: 150,
+    });
     if (fontsLoaded) {
       SplashScreen.hideAsync();
     }
