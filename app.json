@@ -21,7 +21,8 @@
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
-      "package": "com.its.bites"
+      "package": "com.its.bites",
+      "googleServicesFile": "./android/app/google-services.json"
     },
     "web": {
       "output": "static",

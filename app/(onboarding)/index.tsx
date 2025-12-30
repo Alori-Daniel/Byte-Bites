@@ -2,10 +2,12 @@ import Button from "@/components/Button";
 import ScreenWrapper from "@/components/ScreenWrapper";
 import Typo from "@/components/Typo";
 import { Colors } from "@/constants/theme";
+import { usePushNotifications } from "@/hooks/usePushNotification";
 import { scale } from "@/utils/styling";
 import { useRouter } from "expo-router";
 import React, { useRef, useState } from "react";
 import {
+  Alert,
   Dimensions,
   Image,
   ScrollView,
@@ -68,7 +70,14 @@ const Onboarding = () => {
       router.push("/(auth)/login");
     }
   };
+  const { expoPushToken, notification } = usePushNotifications();
 
+  const data = JSON.stringify(notification, undefined, 2);
+  console.log(data);
+  if (expoPushToken) {
+    Alert.alert("Notification", expoPushToken.data);
+    console.log(expoPushToken);
+  }
   return (
     <ScreenWrapper style={{ backgroundColor: theme.background }}>
       <ScrollView
