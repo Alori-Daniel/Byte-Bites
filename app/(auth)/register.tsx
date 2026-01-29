@@ -148,14 +148,15 @@ const register = () => {
               opacity: phoneNumber && email && fullName ? 1 : 0.4,
               width: "100%",
             }}
-            onPress={() =>
+            onPress={() => {
+              router.push("/(auth)/verification");
               console.log(
                 "Register pressed",
                 country?.callingCode + phoneNumber,
                 email,
-                fullName
-              )
-            }
+                fullName,
+              );
+            }}
             disabled={false}
           >
             <Typo

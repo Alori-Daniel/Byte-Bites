@@ -6,12 +6,6 @@ import { Colors, radius } from "@/constants/theme";
 import useCountryStore from "@/store/countryStore";
 import { scale, verticalScale } from "@/utils/styling";
 import { Ionicons } from "@expo/vector-icons";
-import {
-  GoogleSignin,
-  isErrorWithCode,
-  isSuccessResponse,
-  statusCodes,
-} from "@react-native-google-signin/google-signin";
 import { useRouter } from "expo-router";
 import React from "react";
 import {
@@ -30,42 +24,42 @@ const login = () => {
   const { country } = useCountryStore();
   const router = useRouter();
 
-  const handleGoogleSignIn = async () => {
-    try {
-      setLoading(true);
-      await GoogleSignin.signOut();
-      await GoogleSignin.hasPlayServices({
-        showPlayServicesUpdateDialog: true,
-      });
-      const response = await GoogleSignin.signIn();
-      if (isSuccessResponse(response)) {
-        const { idToken, user } = response.data;
-        const { email, name, photo } = user;
-        console.log(idToken, email, name, photo);
-      }
-    } catch (error) {
-      if (isErrorWithCode(error)) {
-        switch (error.code) {
-          case statusCodes.IN_PROGRESS:
-            console.log("Sign in in progress");
-            break;
-          case statusCodes.SIGN_IN_CANCELLED:
-            console.log("Sign in cancelled");
-            break;
-          case statusCodes.PLAY_SERVICES_NOT_AVAILABLE:
-            console.log("Play services not available");
-            break;
-          default:
-            console.log("Something went wrong");
-            break;
-        }
-      } else {
-        console.log(error);
-      }
+  // const handleGoogleSignIn = async () => {
+  //   try {
+  //     setLoading(true);
+  //     await GoogleSignin.signOut();
+  //     await GoogleSignin.hasPlayServices({
+  //       showPlayServicesUpdateDialog: true,
+  //     });
+  //     const response = await GoogleSignin.signIn();
+  //     if (isSuccessResponse(response)) {
+  //       const { idToken, user } = response.data;
+  //       const { email, name, photo } = user;
+  //       console.log(idToken, email, name, photo);
+  //     }
+  //   } catch (error) {
+  //     if (isErrorWithCode(error)) {
+  //       switch (error.code) {
+  //         case statusCodes.IN_PROGRESS:
+  //           console.log("Sign in in progress");
+  //           break;
+  //         case statusCodes.SIGN_IN_CANCELLED:
+  //           console.log("Sign in cancelled");
+  //           break;
+  //         case statusCodes.PLAY_SERVICES_NOT_AVAILABLE:
+  //           console.log("Play services not available");
+  //           break;
+  //         default:
+  //           console.log("Something went wrong");
+  //           break;
+  //       }
+  //     } else {
+  //       console.log(error);
+  //     }
 
-      setLoading(false);
-    }
-  };
+  //     setLoading(false);
+  //   }
+  // };
 
   const FlagSelect = () => {
     const flag = country ? country.flag : "Select";
@@ -205,7 +199,7 @@ const login = () => {
                 borderColor: theme.focusedBorder,
                 marginHorizontal: 5,
               }}
-              onPress={handleGoogleSignIn}
+              // onPress={handleGoogleSignIn}
             >
               <Ionicons name="logo-google" size={24} color="black" />
             </TouchableOpacity>

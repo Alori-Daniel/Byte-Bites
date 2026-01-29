@@ -5,6 +5,7 @@ export const Colors = {
   primaryWhite: "#ffffff",
   primaryText: "#6D6C69",
   text: "#0d1217",
+  lightBg: "#1F2A37",
   light: {
     text: "#ff6347",
     secondaryText: "#697079",
