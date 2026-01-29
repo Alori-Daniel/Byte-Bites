@@ -4,8 +4,8 @@ import Typo from "@/components/Typo";
 import { Colors, radius } from "@/constants/theme";
 import { verticalScale } from "@/utils/styling";
 import { Ionicons } from "@expo/vector-icons";
-import { useRouter } from "expo-router";
-import React, { useRef, useState } from "react";
+import { useLocalSearchParams, useRouter } from "expo-router";
+import React, { useEffect, useRef, useState } from "react";
 import {
   StyleSheet,
   TextInput,
@@ -20,13 +20,13 @@ const verification = () => {
   const colorScheme = useColorScheme() ?? "light";
   const theme = Colors[colorScheme as "light" | "dark"];
   const [code, setCode] = useState(["", "", "", ""]);
-  // const [joinCode, setJoinCode] = useState<string[]>(["", "", "", ""]);
+  const [isResend, setIsResend] = useState<boolean>();
+  const { phoneNumber } = useLocalSearchParams();
+  const [number, setNumber] = useState<any>();
 
+  console.log(phoneNumber);
+  const timerRef = useRef<any | null>(null);
   const inputRef = useRef<(TextInput | null)[]>([]);
-  //   console.log("inputRef", code);
-
-  // const full = joinCode.join();
-  // console.log("full", full);
 
   const handleNext = (text: string, index: number) => {
     console.log("inputRef", text, index);
@@ -47,6 +47,35 @@ const verification = () => {
 
     // if (e.nativeEvent ="Backspace")
   };
+
+  const startTimer = () => {
+    setIsResend(false);
+    setNumber(30);
+
+    timerRef.current = setInterval(() => {
+      setNumber((prev: any) => {
+        if (prev <= 1) {
+          if (timerRef.current) {
+            clearInterval(timerRef.current);
+          }
+          setIsResend(true);
+          return 0;
+        }
+
+        return prev - 1;
+      });
+    }, 1000);
+  };
+
+  useEffect(() => {
+    startTimer();
+
+    return () => {
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+      }
+    };
+  }, []);
 
   return (
     <ScreenWrapper
@@ -91,7 +120,7 @@ const verification = () => {
           color={theme.darkText}
           style={{ textAlign: "center", marginBottom: 20 }}
         >
-          Code has been sent to **********
+          Code has been sent to {phoneNumber}
         </Typo>
         <View
           style={{ flexDirection: "row", gap: 10, justifyContent: "center" }}
@@ -141,10 +170,16 @@ const verification = () => {
           <Typo style={{ color: Colors.text }}>Didn't receive code?</Typo>
           <View style={{ flexDirection: "row", gap: 8, alignItems: "center" }}>
             <Ionicons name="time-outline" size={20} />
-            <Typo style={{ color: Colors.text }}>00 : 25</Typo>
+            <Typo style={{ color: Colors.text }}>00 : {number}</Typo>
           </View>
 
-          <Typo style={{ color: Colors.primaryText }}>Resend Code</Typo>
+          <TouchableOpacity onPress={() => startTimer()} disabled={!isResend}>
+            <Typo
+              style={{ color: isResend ? Colors.text : Colors.primaryText }}
+            >
+              Resend Code
+            </Typo>
+          </TouchableOpacity>
         </View>
       </View>
 
