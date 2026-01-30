@@ -8,6 +8,7 @@ export const Colors = {
   lightBg: "#1F2A37",
   yellow: "#FFC700",
   green: "#13c296",
+  lightPrimary: "#FFEFED",
   light: {
     text: "#ff6347",
     secondaryText: "#697079",

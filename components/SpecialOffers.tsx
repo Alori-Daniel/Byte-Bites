@@ -31,12 +31,10 @@ const SpecialOffers = () => {
           })
         }
       >
-        <TouchableOpacity
-          style={{ alignItems: "center", position: "relative" }}
-        >
+        <View style={{ alignItems: "center", position: "relative" }}>
           <Image source={item.image} />
 
-          <View
+          <TouchableOpacity
             style={{
               position: "absolute",
               borderRadius: radius.full,
@@ -47,8 +45,8 @@ const SpecialOffers = () => {
             }}
           >
             <Ionicons name="heart-outline" size={16} color={Colors.primary} />
-          </View>
-        </TouchableOpacity>
+          </TouchableOpacity>
+        </View>
         <Typo color={Colors.text} fontWeight={"600"} size={12}>
           {item.name}
         </Typo>

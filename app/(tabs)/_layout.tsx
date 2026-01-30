@@ -39,6 +39,7 @@ const _layout = () => {
       <Tabs.Screen
         name="notification"
         options={{
+          headerShown: false,
           title: "Notification",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="notifications" size={size} color={color} />
@@ -48,6 +49,7 @@ const _layout = () => {
       <Tabs.Screen
         name="profile"
         options={{
+          headerShown: false,
           title: "Profile",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="person" size={size} color={color} />

@@ -100,3 +100,83 @@ export const transactionOrders = [
     image: Fish,
   },
 ];
+
+interface Notification {
+  id: string;
+  title: string;
+  description: string;
+  time: string;
+  icon: string;
+  iconBg: string;
+  iconColor: string;
+  unread?: boolean;
+}
+
+export const notifications: Notification[] = [
+  {
+    id: "1",
+    title: "Get 20% Discount Code",
+    description: "Get discount codes from sharing with friends.",
+    time: "12:20 10/05/2024",
+    icon: "pricetag",
+    iconBg: "#FFF4E6",
+    iconColor: "#FFB800",
+    unread: true,
+  },
+  {
+    id: "2",
+    title: "Get 10% Discount Code",
+    description: "Holiday discount code.",
+    time: "11:10 10/05/2024",
+    icon: "pricetag",
+    iconBg: "#FFF4E6",
+    iconColor: "#FFB800",
+    unread: true,
+  },
+  {
+    id: "3",
+    title: "Order Received",
+    description: "Order #SP_0023900 has been delivered successfully.",
+    time: "10:15 10/05/2024",
+    icon: "checkmark-circle",
+    iconBg: "#E6F7F5",
+    iconColor: "#00D4AA",
+  },
+  {
+    id: "4",
+    title: "Order on the Way",
+    description: "Your delivery driver is on the way with your order.",
+    time: "10:10 10/05/2024",
+    icon: "bicycle",
+    iconBg: "#E6F7F5",
+    iconColor: "#00D4AA",
+  },
+  {
+    id: "5",
+    title: "Your Order is Confirmed",
+    description: "Your order #SP_0023900 has been confirmed.",
+    time: "09:59 10/05/2024",
+    icon: "receipt",
+    iconBg: "#E6F7F5",
+    iconColor: "#00D4AA",
+  },
+  {
+    id: "6",
+    title: "Order Successful",
+    description: "Order #SP_0023900 has been placed successfully.",
+    time: "09:56 10/05/2024",
+    icon: "bag-handle",
+    iconBg: "#E6F7F5",
+    iconColor: "#00D4AA",
+  },
+];
+
+export const profileData = [
+  { name: "My Locations", icon: "location-outline" },
+  { name: "My Promotions", icon: "gift-outline" },
+  { name: "Payment Methods", icon: "card-outline" },
+  { name: "Messages", icon: "chatbubble-outline" },
+  { name: "Invite Friends", icon: "person-add-outline" },
+  { name: "Security", icon: "shield-checkmark-outline" },
+  { name: "Help Center", icon: "help-circle-outline" },
+];
