@@ -241,10 +241,10 @@ const details = () => {
           <Button
             style={{
               flex: 1,
-              //   flexDirection: "row",
-              //   justifyContent: "center",
-              //   alignItems: "center",
-              //   gap: 16,
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: 8,
               backgroundColor: Colors.primary,
               //   borderRadius: radius._40,
               height: verticalScale(46),

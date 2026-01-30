@@ -4,7 +4,6 @@ import { verticalScale } from "@/utils/styling";
 import React from "react";
 import {
   StyleSheet,
-  Text,
   TouchableOpacity,
   useColorScheme,
   View,
@@ -26,7 +25,7 @@ const Button = ({ style, onPress, children, loading = false }: ButtonProps) => {
   }
   return (
     <TouchableOpacity style={[styles.button, style]} onPress={onPress}>
-      <Text>{children}</Text>
+      {children}
     </TouchableOpacity>
   );
 };
