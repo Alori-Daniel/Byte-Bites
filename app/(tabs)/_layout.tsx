@@ -30,6 +30,7 @@ const _layout = () => {
         name="likes"
         options={{
           title: "Likes",
+          headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="heart" size={size} color={color} />
           ),

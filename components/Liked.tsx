@@ -12,7 +12,7 @@ import {
 } from "react-native";
 import Typo from "./Typo";
 
-const SpecialOffers = () => {
+const Liked = () => {
   const router = useRouter();
   const renderItem = ({ item }: any) => {
     return (
@@ -31,12 +31,10 @@ const SpecialOffers = () => {
           })
         }
       >
-        <TouchableOpacity
-          style={{ alignItems: "center", position: "relative" }}
-        >
+        <View style={{ alignItems: "center", position: "relative" }}>
           <Image source={item.image} />
 
-          <View
+          <TouchableOpacity
             style={{
               position: "absolute",
               borderRadius: radius.full,
@@ -46,9 +44,9 @@ const SpecialOffers = () => {
               backgroundColor: Colors.primaryWhite,
             }}
           >
-            <Ionicons name="heart-outline" size={16} color={Colors.primary} />
-          </View>
-        </TouchableOpacity>
+            <Ionicons name="heart" size={16} color={Colors.primary} />
+          </TouchableOpacity>
+        </View>
         <Typo color={Colors.text} fontWeight={"600"} size={12}>
           {item.name}
         </Typo>
@@ -73,29 +71,6 @@ const SpecialOffers = () => {
   };
   return (
     <View>
-      <View
-        style={{
-          flexDirection: "row",
-          justifyContent: "space-between",
-          marginBottom: 5,
-        }}
-      >
-        <Typo fontWeight={600} size={16} color={Colors.text}>
-          Special Offers
-        </Typo>
-
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <Typo fontWeight={600} size={16} color={Colors.primary}>
-            View All
-          </Typo>
-          <Ionicons
-            name="chevron-forward-outline"
-            size={16}
-            color={Colors.primary}
-          />
-        </View>
-      </View>
-
       <FlatList
         data={specialOffer}
         numColumns={2}
@@ -114,7 +89,7 @@ const SpecialOffers = () => {
   );
 };
 
-export default SpecialOffers;
+export default Liked;
 
 const styles = StyleSheet.create({
   categoryItem: {
