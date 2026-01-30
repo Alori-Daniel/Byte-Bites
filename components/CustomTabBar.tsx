@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     marginHorizontal: 20,
     paddingVertical: 15,
-    borderRadius: 8,
+    borderRadius: 16,
     borderCurve: "continuous",
     shadowColor: "black",
     shadowOffset: { width: 0, height: 10 },
