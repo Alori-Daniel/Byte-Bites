@@ -1,6 +1,7 @@
 import { specialOffer } from "@/constants/data";
 import { Colors, radius } from "@/constants/theme";
 import { Ionicons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 import React from "react";
 import {
   FlatList,
@@ -12,9 +13,24 @@ import {
 import Typo from "./Typo";
 
 const SpecialOffers = () => {
+  const router = useRouter();
   const renderItem = ({ item }: any) => {
     return (
-      <TouchableOpacity style={styles.categoryItem}>
+      <TouchableOpacity
+        style={styles.categoryItem}
+        onPress={() =>
+          router.push({
+            pathname: "/details",
+            params: {
+              image: item.image,
+              name: item.name,
+              rating: item.rating,
+              price: item.price,
+              discount: item.discount,
+            },
+          })
+        }
+      >
         <View style={{ alignItems: "center" }}>
           <Image source={item.image} />
         </View>
