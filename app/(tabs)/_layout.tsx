@@ -20,6 +20,7 @@ const _layout = () => {
         name="orders"
         options={{
           title: "Orders",
+          headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="list" size={size} color={color} />
           ),

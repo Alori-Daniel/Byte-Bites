@@ -69,3 +69,34 @@ export const specialOffer = [
     image: Fish,
   },
 ];
+
+export const transactionOrders = [
+  {
+    name: "SP 002526",
+    rating: 4.9,
+    price: 28,
+    status: "Completed",
+    image: chicken,
+  },
+  {
+    name: "SP 002826",
+    rating: 4.9,
+    price: 25,
+    status: "Completed",
+    image: Beef,
+  },
+  {
+    name: "SP 002426",
+    rating: 4.9,
+    price: 23,
+    status: "Completed",
+    image: Turkey,
+  },
+  {
+    name: "SP 002326",
+    rating: 4.9,
+    price: 30,
+    status: "Cancelled",
+    image: Fish,
+  },
+];

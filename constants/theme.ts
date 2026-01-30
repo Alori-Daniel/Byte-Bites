@@ -7,6 +7,7 @@ export const Colors = {
   text: "#0d1217",
   lightBg: "#1F2A37",
   yellow: "#FFC700",
+  green: "#13c296",
   light: {
     text: "#ff6347",
     secondaryText: "#697079",
