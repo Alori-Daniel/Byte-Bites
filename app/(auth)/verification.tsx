@@ -196,6 +196,7 @@ const verification = () => {
               backgroundColor: theme.buttonBackground,
               width: "100%",
             }}
+            onPress={() => router.replace("/(tabs)/home")}
             disabled={false}
           >
             <Typo
